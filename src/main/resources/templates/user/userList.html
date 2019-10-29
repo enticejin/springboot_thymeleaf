@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>UserList</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+    <div>
+        <a href="/user/form" th:href="@{/user/form}">新建用戶</a>
+    </div>
+    <table border="2">
+        <tr>
+            <th>
+                user_id
+            </th>
+            <th>
+                賬號
+            </th>
+            <th>
+                姓名
+            </th>
+            <th>
+                管理
+            </th>
+        </tr>
+        <tr th:each="user:${userList}">
+            <td th:text="${user.user_id}"></td>
+            <td th:text="${user.user_account}"></td>
+            <td th:text="${user.user_name}"></td>
+            <td><a th:href="@{'/user/'+${user.user_id}}" th:text="${user.user_pwd}"></a>
+            <a th:href="@{'/user/delete/'+${user.user_id}}">刪除</a></td>
+        </tr>
+    </table>
+</body>
+</html>

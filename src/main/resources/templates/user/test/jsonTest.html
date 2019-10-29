@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+    <p>
+        First Name:<span id="fname"></span><br>
+        Last  Name:<span id="lname"></span><br>
+    </p>
+<script type="text/javascript">
+    var txt = '{"employees":[' +
+        '{"firstName":"Bill","lastName":"Gates" },' +
+        '{"firstName":"George","lastName":"Bush" },' +
+        '{"firstName":"Thomas","lastName":"Carter" }]}';
+    var obj = eval("("+txt+")");
+
+    fname = document.getElementById('fname');
+    lname = document.getElementById('lname');
+
+        fname.innerHTML = obj.employees[1].firstName;
+        lname.innerHTML = obj.employees[1].lastName;
+</script>
+</body>
+</html>

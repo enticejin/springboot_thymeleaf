@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>userview</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+    <div>
+        <p><strong>ID:</strong><span th:text="${user.user_id}"></span></p>
+        <p><strong>姓名：</strong><span th:text="${user.user_name}"></span></p>
+        <p><strong>賬號：</strong><span th:text="${user.user_account}"></span></p>
+        <p><strong>密碼：</strong><span th:text="${user.user_pwd}"></span></p>
+    </div>
+
+    <div>
+        <a th:href="@{'/user/delete/'+${user.user_id}}">刪除</a>
+        <a th:href="@{'/user/edit/'+${user.user_id}}">修改</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+<form action="/user" th:action="@{/user}" method="post" th:object="${user}">
+    <input type="hidden" name="user_id" th:value="*{user_id}">
+    姓名：<br>
+    <input type="text" name="user_name" th:value="*{user_name}"><br>
+    賬號：<br>
+    <input type="text" name="user_account" th:value="*{user_account}"><br>
+    密碼：<br>
+    <input type="text" name="user_pwd" th:value="*{user_pwd}"><br>
+    <br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
